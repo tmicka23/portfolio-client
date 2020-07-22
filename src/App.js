@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
-import API from './service/API';
+import useFetch from './hooks/useFetch';
 
 function App() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    API.get('/projects.json')
-      .then((res) => setData(res.data))
-      .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
-  }, []);
+  const [data, loading, error] = useFetch('/projects.json');
   return (
     <div className='app'>
       <aside className='app-sidebar'>coucou !</aside>
       <main className='app-main'>
-        {loading ? <p>Chargement ...</p> : JSON.stringify(data)}
+        {!error && (loading ? <p>Chargement ...</p> : JSON.stringify(data))}
       </main>
     </div>
   );
