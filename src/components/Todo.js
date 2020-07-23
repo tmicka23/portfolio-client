@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import API from '../service/API';
-import './Card.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Todo.css';
+import { Link } from 'react-router-dom';
 
 const Todo = () => {
   const [state, setState] = useState({
@@ -67,26 +69,29 @@ const Todo = () => {
   }, [success]); // eslint-disable-line
 
   return (
-    <div className='todo'>
+    <div className='todos'>
       <div className='container'>
-        <form onSubmit={(e) => addTodo(e, state.todo)}>
+        <Link to='/'> &#8592; Retour à l'accueil</Link>
+        <form onSubmit={(e) => addTodo(e, state.todo)} className='mt-5 mb-5'>
           <div className='form-group'>
             <label htmlFor='title'>Ajouter une todo</label>
             <input
               type='text'
               value={state.todo.title}
               name='title'
-              className='form-control'
+              className='form-control mb-1'
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <div className='form-check'>
-            <label htmlFor='done'>done</label>
+          <div className='form-group form-check mb-2'>
+            <label htmlFor='done' className='form-check-label'>
+              done
+            </label>
             <input
               type='checkbox'
               checked={state.todo.done}
               name='done'
-              className='form-control-check'
+              className='form-check-input'
               onChange={(e) => handleChange(e)}
             />
           </div>
@@ -99,7 +104,7 @@ const Todo = () => {
       {!state.error && state.loading
         ? 'Chargement ... '
         : state.todos.map((t) => (
-            <div key={t.id} className='container'>
+            <div key={t.id} className='container mb-2'>
               <form onSubmit={(e) => update(e, t.id)}>
                 <div className='form-group'>
                   <label htmlFor={t.title}></label>
@@ -107,20 +112,22 @@ const Todo = () => {
                     type='text'
                     defaultValue={t.title}
                     name='title'
-                    className='form-control'
+                    className='form-control mb-1'
                   />
                 </div>
-                <div className='form-check'>
-                  <label htmlFor={t.id}>done</label>
+                <div className='form-group form-check mb-2'>
+                  <label htmlFor={t.id} className='form-check-label'>
+                    done
+                  </label>
                   <input
                     type='checkbox'
                     defaultChecked={t.done}
                     name='done'
-                    className='form-control-check'
+                    className='form-check-input'
                   />
                 </div>
-                <button className='btn btn-primary' type='submit'>
-                  éditer
+                <button className='btn btn-primary mr-3' type='submit'>
+                  Éditer
                 </button>
                 <button
                   className='btn btn-danger'

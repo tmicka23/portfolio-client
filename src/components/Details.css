@@ -1,0 +1,39 @@
+.details {
+  width: 80%;
+  margin: 20px auto;
+  position: relative;
+  padding: 30px 0;
+}
+
+.details > h2 {
+  position: absolute;
+  display: inline;
+  top: 0;
+  left: 0;
+}
+
+.details > img {
+  margin: 30px 0;
+  width: 100%;
+}
+
+.details .date,
+.details .client,
+.details .tags {
+  display: block;
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333333;
+}
+
+.details .links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details a {
+  color: #545454;
+  display: block;
+  margin: 20px 0;
+}
