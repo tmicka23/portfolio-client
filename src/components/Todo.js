@@ -5,9 +5,10 @@ const Todo = () => {
   const [data, loading, error] = useFetch(`/todos.json`);
   return (
     <div>
-      {!error && loading
+      {/* {!error && loading
         ? 'Chargement ...'
-        : data.map((d) => <h3>{d.title}</h3>)}
+        : data.map((d) => <h3>{d.title}</h3>)} */}
+      TODO
     </div>
   );
 };
