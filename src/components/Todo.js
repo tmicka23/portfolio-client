@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import API from '../service/API';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './Card.css';
 
 const Todo = () => {
   const [state, setState] = useState({
