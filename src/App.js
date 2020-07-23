@@ -14,7 +14,7 @@ function App() {
           <main className='app-main'>
             <Route exact path='/' component={Home} />
             <Route exact path='/projet/:id' component={ProjectDetails} />
-            <Route exact path='/todos' component={Todo} />
+            <Route exact path='/todolist' component={Todo} />
           </main>
         </Switch>
       </div>
