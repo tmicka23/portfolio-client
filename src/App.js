@@ -1,25 +1,24 @@
 import React from 'react';
 import './App.css';
-import useFetch from './hooks/useFetch';
-import Card from './components/Card';
+import Home from './components/Home';
+import ProjectDetails from './components/ProjectDetails';
+import Todo from './components/Todo';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
-  const [data, loading, error] = useFetch('/projects.json');
   return (
-    <div className='app'>
-      <aside className='app-sidebar'>coucou !</aside>
-      <main className='app-main'>
-        {!error && loading ? (
-          <p>Chargement ...</p>
-        ) : (
-          <div className='cards'>
-            {data.map((d) => (
-              <Card key={d.id} {...d} />
-            ))}
-          </div>
-        )}
-      </main>
-    </div>
+    <Router>
+      <div className='app'>
+        <aside className='app-sidebar'>coucou !</aside>
+        <Switch>
+          <main className='app-main'>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/projet/:id' component={ProjectDetails} />
+            <Route exact path='/todos' component={Todo} />
+          </main>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
