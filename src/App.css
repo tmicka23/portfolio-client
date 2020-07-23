@@ -2,6 +2,13 @@
   position: relative;
 }
 
+.app .cards {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
 @media only screen and (min-width: 992px) {
   .app .app-sidebar {
     width: 375px;

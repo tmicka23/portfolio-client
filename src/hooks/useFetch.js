@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import API from '../service/API';
 
 const useFetch = (url) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
