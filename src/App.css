@@ -4,11 +4,13 @@
   padding: 0;
 }
 
-.app .mt-cards {
-  width: 90%;
-  margin: 20px auto;
+.app .cards {
+  width: 100%;
+  margin: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .app .app-sidebar .app-header {
@@ -33,11 +35,18 @@
 .app p {
   color: #545454;
   font-weight: 300;
+  text-align: justify;
 }
 
 .app .mt-container {
   width: 90%;
   margin: 20px auto;
+}
+@media only screen and (min-width: 768px) {
+  .app .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -53,6 +62,6 @@
 
   .app .app-main {
     margin-left: 375px;
-    height: 200vh;
+    min-height: 100vh;
   }
 }

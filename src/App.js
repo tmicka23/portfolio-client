@@ -21,8 +21,8 @@ function App() {
           <div className='mt-container'>
             <img src={micka} alt='Mickaël Thely' />
             <h1>
-              Hello !Je m’appel <br /> <strong>Mickaël Thely</strong> <br /> Je
-              suis <strong>Développeur Web Front-End</strong>
+              Hello ! Je m’appelle <br /> <strong>Mickaël Thely</strong> <br />{' '}
+              Je suis <strong>Développeur Web Front-End</strong>
             </h1>
 
             <p>

@@ -1,3 +1,55 @@
 .mt-card {
-  width: 90%;
+  width: 320px;
+  height: 300px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  margin: 20px 0;
+}
+
+.mt-card img {
+  max-height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.mt-card .mt-card-title {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin: 0;
+  display: inline;
+}
+
+.mt-card span.date {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #545454;
+  margin-bottom: 10px;
+}
+
+.mt-card span.tags {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #545454;
+}
+
+.card-link {
+  color: #545454;
+}
+
+@media only screen and (min-width: 768px) {
+  .mt-card {
+    margin: 40px;
+    width: 360px;
+    height: 320px;
+  }
 }
