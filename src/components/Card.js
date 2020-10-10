@@ -13,10 +13,9 @@ const Card = ({ name, date, image, tags, id }) => {
         {image.url && (
           <img
             src={
-              process.env.REACT_APP_API_BASEURL +
-              (process.env.NODE_ENV === "production"
-                ? image.url.substring(1)
-                : image.url)
+              process.env.NODE_ENV === "production"
+                ? image.url.replace("http", "https")
+                : process.env.REACT_APP_API_BASEURL + image.url
             }
             alt={name}
           />
