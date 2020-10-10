@@ -7,7 +7,6 @@
 .mt-card-link {
   display: block;
   width: 320px;
-  height: 250px;
   text-decoration: none;
   color: inherit;
   margin: 36px 24px;
@@ -38,6 +37,5 @@
 @media only screen and (min-width: 768px) {
   .mt-card-link {
     width: 450px;
-    height: 320px;
   }
 }
